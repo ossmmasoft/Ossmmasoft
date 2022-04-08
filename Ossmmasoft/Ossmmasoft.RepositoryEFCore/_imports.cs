@@ -1,0 +1,9 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Ossmmasoft.Entities.Local.Interfaces;
+global using Ossmmasoft.Entities.Local.POCOs.PRE;
+global using Ossmmasoft.RepositoryEFCore.DataContext;
+global using Ossmmasoft.RepositoryEFCore.Repositories.Local;
+global using System.Reflection;
