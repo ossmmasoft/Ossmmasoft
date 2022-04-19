@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
+﻿namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 {
     public partial class CccTransaction
     {

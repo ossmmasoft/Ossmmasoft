@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="External\Interfaces\" />
-    <Folder Include="External\POCOs\PRE\" />
-  </ItemGroup>
-
 </Project>

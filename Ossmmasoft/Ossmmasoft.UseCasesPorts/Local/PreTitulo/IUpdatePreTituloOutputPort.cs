@@ -2,6 +2,6 @@
 {
     public interface IUpdatePreTituloOutputPort
     {
-        Task Handle(PreTituloDTO preTitulo);
+        Task Handle(PreTitulosDTO preTitulo);
     }
 }

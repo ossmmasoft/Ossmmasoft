@@ -1,6 +1,6 @@
 ﻿namespace Ossmmasoft.DTOs.Local.PreTitulo
 {
-    public class PreTituloDTO
+    public class PreTitulosDTO
     {
 
         public int Id { get; init; }

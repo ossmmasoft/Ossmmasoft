@@ -7,6 +7,9 @@ namespace Ossmmasoft.Entities.Local.Interfaces
         void UpdatePreTitulo(PreTitulo preTitulo);
         void UpdateRangePreTitulo(List<PreTitulo> preTitulos);
         Task<PreTitulo> GetById(int id);
+        Task DeletePreTitulo(int id);
+        Task DeleteAllPreTitulo();
         IQueryable<PreTitulo> GetAllPreTitulos();
+        Task<int> NextId();
     }
 }

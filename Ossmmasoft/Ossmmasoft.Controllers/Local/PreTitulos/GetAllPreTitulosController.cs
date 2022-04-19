@@ -13,10 +13,10 @@
             (_inputPort, _outputPort) = (inputPort, outputPort);
 
         [HttpGet]
-        public async Task<IEnumerable<PreTituloDTO>> GetAllPreTirulos()
+        public async Task<IEnumerable<PreTitulosDTO>> GetAllPreTirulos()
         {
             await _inputPort.Handle();
-            return ((IPresenter<IEnumerable<PreTituloDTO>>)_outputPort).Content;
+            return ((IPresenter<IEnumerable<PreTitulosDTO>>)_outputPort).Content;
 
         }
     }

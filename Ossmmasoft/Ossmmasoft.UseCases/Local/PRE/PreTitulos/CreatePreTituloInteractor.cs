@@ -14,6 +14,12 @@
 
         public async Task Handle(CreatePreTituloDTO preTituloDTO)
         {
+            if (preTituloDTO.Id == 0)
+            {
+                preTituloDTO.Id = await _repository.NextId();
+
+            }
+
             PreTitulo newPreTitulo = new PreTitulo
             {
                 Id = preTituloDTO.Id,
@@ -32,7 +38,7 @@
             _repository.CreatePreTitulo(newPreTitulo);
             await _unitOfWork.SaveChangesAsync();
 
-            PreTituloDTO newPreTituloDto = new PreTituloDTO
+            PreTitulosDTO newPreTituloDto = new PreTitulosDTO
             {
                 Id = newPreTitulo.Id,
                 TituloPadreId = newPreTitulo.TituloPadreId,

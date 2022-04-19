@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Server = localhost;Port=5444;Database=MM1;User Id=postgres;Password=mvc4-2014;" Npgsql.EntityFrameworkCore.PostgreSQL -o ModelsTmp

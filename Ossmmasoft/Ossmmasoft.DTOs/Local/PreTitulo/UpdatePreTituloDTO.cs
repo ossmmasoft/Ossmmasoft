@@ -9,8 +9,8 @@
         public string Complemento1 { get; init; } = string.Empty;
         public string Complemento2 { get; init; } = string.Empty;
         public string Complemento3 { get; init; } = string.Empty;
-        public string UsuarioActualizacion { get; init; } = string.Empty;
-        public string UsuarioCreacion { get; init; } = string.Empty;
+        public int UsuarioActualizacion { get; init; }
+        public int UsuarioCreacion { get; init; }
         public DateTime FechaCreacion { get; init; }
         public DateTime FechaActualizacion { get; init; }
         public int CodigoEmpresa { get; init; }

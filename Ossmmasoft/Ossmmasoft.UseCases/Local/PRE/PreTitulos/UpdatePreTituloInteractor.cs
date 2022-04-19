@@ -32,7 +32,7 @@
             _repository.UpdatePreTitulo(preTitulo);
             await _unitOfWork.SaveChangesAsync();
 
-            PreTituloDTO newPreTituloDto = new PreTituloDTO
+            PreTitulosDTO newPreTituloDto = new PreTitulosDTO
             {
                 Id = preTitulo.Id,
                 TituloPadreId = preTitulo.TituloPadreId,

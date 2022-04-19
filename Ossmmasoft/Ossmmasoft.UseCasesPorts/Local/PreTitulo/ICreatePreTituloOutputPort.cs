@@ -2,6 +2,6 @@
 {
     public interface ICreatePreTituloOutputPort
     {
-        Task Handle(PreTituloDTO preTitulo);
+        Task Handle(PreTitulosDTO preTitulo);
     }
 }

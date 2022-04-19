@@ -12,6 +12,7 @@ namespace Ossmmasoft.RepositoryEFCore.DataContext
         }
 
         public DbSet<PreTitulo> PreTitulos { get; set; }
+        public DbSet<PreDescriptiva> PreDescriptiva { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

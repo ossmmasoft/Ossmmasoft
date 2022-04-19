@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿/*
+using Ossmmasoft.Entities.Local.POCOs.NOM;
 
 namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 {
@@ -3425,6 +3423,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreAnteproyectos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preanteproyectoempresa_fk");
+
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreAnteproyectos)
                     .HasForeignKey(d => d.CodigoIcp)
@@ -3466,6 +3469,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreAsignaciones)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preasignacionesempresa_fk");
 
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreAsignaciones)
@@ -3514,6 +3522,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreCargos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("precargos_fk");
 
                 entity.HasOne(d => d.TipoCargo)
                     .WithMany(p => p.PreCargoTipoCargos)
@@ -3565,6 +3578,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreCompromisos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("precompromisos_fk");
             });
 
             modelBuilder.Entity<PreCostoContCol>(entity =>
@@ -3710,6 +3728,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActuualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreDescriptivas)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("predescriptivasempresa_fk");
 
                 entity.HasOne(d => d.PreTitulo)
                     .WithMany(p => p.PreDescriptivas)
@@ -3948,6 +3971,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreEquipos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preequiposempresa_fk");
+
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreEquipos)
                     .HasForeignKey(d => d.CodigoIcp)
@@ -3990,6 +4018,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreEscalas)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preescalaempresa_fk");
 
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreEscalas)
@@ -4048,6 +4081,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreIdentificaciones)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preidentificacionesempresa_fk");
 
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreIdentificaciones)
@@ -4111,6 +4149,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreIndiceCatPrgs)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preindicecatprg_fk");
+
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreIndiceCatPrgs)
                     .HasForeignKey(d => d.CodigoPresupuesto)
@@ -4140,6 +4183,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreIngresos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preingresosempresa_fk");
 
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreIngresos)
@@ -4247,6 +4295,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreMeta)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("premetasempresas_fk");
+
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreMeta)
                     .HasForeignKey(d => d.CodigoPresupuesto)
@@ -4298,6 +4351,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreModificacions)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("premodificacionempresa_fk");
+
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreModificacions)
                     .HasForeignKey(d => d.CodigoPresupuesto)
@@ -4343,6 +4401,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActulizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreNivelesPucs)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("prenivelespucempresa_fk");
             });
 
             modelBuilder.Entity<PreObjetivo>(entity =>
@@ -4368,6 +4431,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreObjetivos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preobjetivosempresa_fk");
 
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreObjetivos)
@@ -4464,6 +4532,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreOrganismos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preorganismosempresa_fk");
 
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreOrganismos)
@@ -4586,6 +4659,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.Descripcion).HasMaxLength(2500);
 
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PrePlanUnicoCuenta)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preplanunicocuentasempresa_fk");
             });
 
             modelBuilder.Entity<PrePorcGastosMensuale>(entity =>
@@ -4714,6 +4792,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PrePresupuestos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("prepresupuestosempresa_fk");
             });
 
             modelBuilder.Entity<PreProgramasSociale>(entity =>
@@ -4802,6 +4885,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreProyectos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preproyectosempresa_fk");
 
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreProyectos)
@@ -5018,6 +5106,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PrePucModificacions)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("prepucmodificacionempresa_fk");
+
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PrePucModificacions)
                     .HasForeignKey(d => d.CodigoIcp)
@@ -5072,6 +5165,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PrePucSolModificacions)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("prepucsolmodificacionempresa_fk");
+
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PrePucSolModificacions)
                     .HasForeignKey(d => d.CodigoIcp)
@@ -5123,6 +5221,16 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoCargoNavigation)
+                    .WithMany(p => p.PreRelacionCargos)
+                    .HasForeignKey(d => d.CodigoCargo)
+                    .HasConstraintName("prerelacioncargoscodigocargo_fk");
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreRelacionCargos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("prerelacioncargosempresa_fk");
+
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreRelacionCargos)
                     .HasForeignKey(d => d.CodigoPresupuesto)
@@ -5156,6 +5264,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreSaldos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("presaldosempresa_fk");
 
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreSaldos)
@@ -5680,6 +5793,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreSolModificacions)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("presolmodificacionempresa_fk");
+
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreSolModificacions)
                     .HasForeignKey(d => d.CodigoPresupuesto)
@@ -5790,6 +5908,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreTitulos)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("pretitulosempresa_fk");
             });
 
             modelBuilder.Entity<PreTmpSaldo>(entity =>
@@ -5899,6 +6022,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreTransferencia)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("pretransferenciasempresa_fk");
+
                 entity.HasOne(d => d.CodigoIcpNavigation)
                     .WithMany(p => p.PreTransferencia)
                     .HasForeignKey(d => d.CodigoIcp)
@@ -5939,6 +6067,11 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioActualizacion).HasPrecision(10);
 
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
+
+                entity.HasOne(d => d.CodigoEmpresaNavigation)
+                    .WithMany(p => p.PreUnidadesEjecutoras)
+                    .HasForeignKey(d => d.CodigoEmpresa)
+                    .HasConstraintName("preunidadesejecutorasempresa_fk");
 
                 entity.HasOne(d => d.CodigoPresupuestoNavigation)
                     .WithMany(p => p.PreUnidadesEjecutoras)
@@ -7225,6 +7358,31 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
                 entity.Property(e => e.UsuarioCreacion).HasPrecision(10);
 
                 entity.Property(e => e.VersionSistemaId).HasPrecision(10);
+
+                entity.HasOne(d => d.Identificacion)
+                    .WithMany(p => p.SisEmpresaIdentificacions)
+                    .HasForeignKey(d => d.IdentificacionId)
+                    .HasConstraintName("sisempresasidentificacionid_fk");
+
+                entity.HasOne(d => d.MarcaServidor)
+                    .WithMany(p => p.SisEmpresaMarcaServidors)
+                    .HasForeignKey(d => d.MarcaServidorId)
+                    .HasConstraintName("sisempresasmarcaservidorid_fk");
+
+                entity.HasOne(d => d.SistemaOperativo)
+                    .WithMany(p => p.SisEmpresaSistemaOperativos)
+                    .HasForeignKey(d => d.SistemaOperativoId)
+                    .HasConstraintName("sisempresassistemaoperativoid_fk");
+
+                entity.HasOne(d => d.TipoEmpresa)
+                    .WithMany(p => p.SisEmpresaTipoEmpresas)
+                    .HasForeignKey(d => d.TipoEmpresaId)
+                    .HasConstraintName("sisempresastipoempresaid_fk");
+
+                entity.HasOne(d => d.VersionSistema)
+                    .WithMany(p => p.SisEmpresaVersionSistemas)
+                    .HasForeignKey(d => d.VersionSistemaId)
+                    .HasConstraintName("sisempresasversionsistemaid_fk");
             });
 
             modelBuilder.Entity<Tmp>(entity =>
@@ -7307,3 +7465,4 @@ namespace Ossmmasoft.RepositoryEFCore.ModelsTmp
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+*/

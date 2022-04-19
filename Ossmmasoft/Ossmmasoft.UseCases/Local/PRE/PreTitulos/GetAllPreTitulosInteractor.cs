@@ -13,7 +13,7 @@
         public Task Handle()
         {
             var preTitulos = _repository.GetAllPreTitulos().Select(p =>
-             new PreTituloDTO
+             new PreTitulosDTO
              {
                  Id = p.Id,
                  TituloPadreId = p.TituloPadreId,

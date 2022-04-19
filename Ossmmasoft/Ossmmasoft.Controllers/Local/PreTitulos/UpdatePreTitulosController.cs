@@ -13,11 +13,11 @@ namespace Ossmmasoft.Controllers.Local.PreTitulos
             (_inputPort, _outputPort) = (inputPort, outputPort);
 
         [HttpPost]
-        public async Task<PreTituloDTO> CreatePreTitulo(UpdatePreTituloDTO preTitulo)
+        public async Task<PreTitulosDTO> UpdatePreTitulo(UpdatePreTituloDTO preTitulo)
         {
             await _inputPort.Handle(preTitulo);
 
-            return ((IPresenter<PreTituloDTO>)_outputPort).Content;
+            return ((IPresenter<PreTitulosDTO>)_outputPort).Content;
         }
 
 

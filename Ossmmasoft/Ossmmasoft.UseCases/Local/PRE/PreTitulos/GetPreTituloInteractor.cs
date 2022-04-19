@@ -19,7 +19,7 @@
             if (preTitulo == null) return;
 
 
-            PreTituloDTO newPreTituloDto = new PreTituloDTO
+            PreTitulosDTO newPreTituloDto = new PreTitulosDTO
             {
                 Id = preTitulo.Id,
                 TituloPadreId = preTitulo.TituloPadreId,

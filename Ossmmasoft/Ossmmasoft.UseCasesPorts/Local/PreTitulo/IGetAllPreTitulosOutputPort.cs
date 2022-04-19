@@ -2,6 +2,6 @@
 {
     public interface IGetAllPreTitulosOutputPort
     {
-        Task Handle(IEnumerable<PreTituloDTO> preTitulos);
+        Task Handle(IEnumerable<PreTitulosDTO> preTitulos);
     }
 }
